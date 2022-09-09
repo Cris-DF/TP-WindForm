@@ -1,4 +1,4 @@
-# TP-WindForm
+# TP-WinForm
 Actividad nro 2 de Programacion 3, UTN FRGP
 
 La consigna dada fue:
