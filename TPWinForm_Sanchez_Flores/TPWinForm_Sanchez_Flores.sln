@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32802.440
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPWinForm_Sanchez_Flores", "TPWinForm_Sanchez_Flores.csproj", "{7570BFDC-B5A9-41E3-A15E-5E6FDC33720F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comercio", "..\Comercio\Comercio.csproj", "{E38F9DCE-9433-422F-AB39-2846C15A6130}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7570BFDC-B5A9-41E3-A15E-5E6FDC33720F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7570BFDC-B5A9-41E3-A15E-5E6FDC33720F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7570BFDC-B5A9-41E3-A15E-5E6FDC33720F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7570BFDC-B5A9-41E3-A15E-5E6FDC33720F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E38F9DCE-9433-422F-AB39-2846C15A6130}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E38F9DCE-9433-422F-AB39-2846C15A6130}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E38F9DCE-9433-422F-AB39-2846C15A6130}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E38F9DCE-9433-422F-AB39-2846C15A6130}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E4B4BAD7-B4A3-4593-A0E9-08F6940CEF15}
+	EndGlobalSection
+EndGlobal
