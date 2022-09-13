@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPWinForm_Sanchez_Flores", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comercio", "..\Comercio\Comercio.csproj", "{E38F9DCE-9433-422F-AB39-2846C15A6130}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dominio", "..\dominio\dominio.csproj", "{3ACD2430-FEC5-41DD-BE15-054B74254474}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E38F9DCE-9433-422F-AB39-2846C15A6130}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E38F9DCE-9433-422F-AB39-2846C15A6130}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E38F9DCE-9433-422F-AB39-2846C15A6130}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ACD2430-FEC5-41DD-BE15-054B74254474}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ACD2430-FEC5-41DD-BE15-054B74254474}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ACD2430-FEC5-41DD-BE15-054B74254474}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ACD2430-FEC5-41DD-BE15-054B74254474}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
