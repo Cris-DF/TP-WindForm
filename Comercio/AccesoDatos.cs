@@ -13,6 +13,12 @@ namespace Comercio
         private SqlCommand command;
         private SqlDataReader reader;
 
+        public SqlDataReader Reader
+        {
+            get { return reader; }
+        }
+
+
         public AccesoDatos()
         {
             connection = new SqlConnection("server = .\\SQLEXPRESS; database = CATALOGO_DB; integrated security = true");
@@ -22,6 +28,27 @@ namespace Comercio
         {
             command.CommandType = System.Data.CommandType.Text;
             command.CommandText = query;
+        }
+
+        public void executeQuery()
+        {
+            command.Connection = connection;
+            try
+            {
+                connection.Open();
+                reader = command.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void closeConnection()
+        {
+            if (reader != null)
+                reader.Close();
+            connection.Close();
         }
     }
 }
