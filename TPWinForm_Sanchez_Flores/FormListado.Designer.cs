@@ -29,36 +29,49 @@ namespace TPWinForm_Sanchez_Flores
         /// </summary>
         private void InitializeComponent()
         {
-            this.ListBoxArticulos = new System.Windows.Forms.ListBox();
+            this.dgvListadoArticulos = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoArticulos)).BeginInit();
             this.SuspendLayout();
             // 
-            // ListBoxArticulos
+            // dgvListadoArticulos
             // 
-            this.ListBoxArticulos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ListBoxArticulos.FormattingEnabled = true;
-            this.ListBoxArticulos.Location = new System.Drawing.Point(12, 12);
-            this.ListBoxArticulos.Name = "ListBoxArticulos";
-            this.ListBoxArticulos.Size = new System.Drawing.Size(357, 420);
-            this.ListBoxArticulos.TabIndex = 0;
+            this.dgvListadoArticulos.AllowUserToAddRows = false;
+            this.dgvListadoArticulos.AllowUserToDeleteRows = false;
+            this.dgvListadoArticulos.AllowUserToResizeRows = false;
+            this.dgvListadoArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvListadoArticulos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvListadoArticulos.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvListadoArticulos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvListadoArticulos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvListadoArticulos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvListadoArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListadoArticulos.Location = new System.Drawing.Point(12, 12);
+            this.dgvListadoArticulos.MultiSelect = false;
+            this.dgvListadoArticulos.Name = "dgvListadoArticulos";
+            this.dgvListadoArticulos.ReadOnly = true;
+            this.dgvListadoArticulos.RowHeadersVisible = false;
+            this.dgvListadoArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListadoArticulos.Size = new System.Drawing.Size(391, 334);
+            this.dgvListadoArticulos.TabIndex = 0;
             // 
             // VentanaListaArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(614, 450);
-            this.Controls.Add(this.ListBoxArticulos);
+            this.ClientSize = new System.Drawing.Size(596, 358);
+            this.Controls.Add(this.dgvListadoArticulos);
             this.Name = "VentanaListaArticulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de Articulos";
             this.Load += new System.EventHandler(this.VentanaListaArticulos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoArticulos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox ListBoxArticulos;
+        private System.Windows.Forms.DataGridView dgvListadoArticulos;
     }
 }
 

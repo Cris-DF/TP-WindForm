@@ -18,6 +18,7 @@ namespace dominio
         public string ImagenUrl { get; set; }
 
         public float Precio { get; set; }
-        
+
+
     }
 }
