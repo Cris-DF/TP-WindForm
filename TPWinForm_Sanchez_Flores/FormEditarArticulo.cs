@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
+using Comercio;
 
 namespace TPWinForm_Sanchez_Flores
 {
@@ -31,16 +32,18 @@ namespace TPWinForm_Sanchez_Flores
             txtNombre.Text = articulo.Nombre;
             txtDescripcion.Text = articulo.Descripcion;
 
-            //en la edicion estos deben ser desplegables 
-            txtMarca.Text = articulo.Marca.Descripcion;
-            txtCategoria.Text = articulo.Categoria.Descripcion;
-
             txtPrecio.Text = articulo.Precio.ToString();
 
-                       
+
             //carga basica de imagen
             try
             {
+                DataClasificacion dataClasificacion = new DataClasificacion();
+                cboCategorias.DataSource = dataClasificacion.listar("CATEGORIAS");
+                cboMarca.DataSource = dataClasificacion.listar("MARCAS");
+                
+                //PENDIENTE: que los desplegables inicien con el dato correspondiente
+
                 BoxImg.Load(articulo.ImagenUrl);
 
             }

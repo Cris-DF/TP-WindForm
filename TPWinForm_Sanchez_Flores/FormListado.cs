@@ -58,6 +58,8 @@ namespace TPWinForm_Sanchez_Flores
 
             FormEditarArticulo frmVer = new FormEditarArticulo(seleccion);
             frmVer.ShowDialog();
+
+            //despues de editar el articulo la ventana actual tiene que actualizar las listas
             
 
         }
