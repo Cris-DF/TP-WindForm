@@ -19,6 +19,7 @@ namespace Comercio
                 acceso.setQuery("Select A.Id id, Codigo, Nombre, A.Descripcion descr, ImagenUrl, Precio, M.Descripcion Marca, C.Descripcion Categoria, IdMarca, IdCategoria From ARTICULOS AS A left JOIN MARCAS M ON M.Id = A.IdMarca left JOIN CATEGORIAS AS C  ON C.Id = A.IdCategoria");
                 acceso.executeQuery();
 
+                //lectura con VARIAS validaciones por los NULL en DB_CATALOGO
                 while (acceso.Reader.Read())
                 {
                     Articulo articulo = new Articulo();
@@ -70,6 +71,7 @@ namespace Comercio
             }
             finally
             {
+                //IMPORTANTE, cerrar la conexion
                 acceso.closeConnection();
             }
 

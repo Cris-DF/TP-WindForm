@@ -36,9 +36,11 @@ namespace TPWinForm_Sanchez_Flores
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureArticulo = new System.Windows.Forms.PictureBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.lblCodigo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoArticulos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvListadoArticulos
@@ -65,7 +67,7 @@ namespace TPWinForm_Sanchez_Flores
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(419, 331);
+            this.btnEditar.Location = new System.Drawing.Point(422, 331);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(150, 23);
             this.btnEditar.TabIndex = 1;
@@ -75,7 +77,7 @@ namespace TPWinForm_Sanchez_Flores
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(419, 360);
+            this.btnNuevo.Location = new System.Drawing.Point(422, 360);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(150, 23);
             this.btnNuevo.TabIndex = 2;
@@ -85,7 +87,7 @@ namespace TPWinForm_Sanchez_Flores
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(416, 291);
+            this.lblId.Location = new System.Drawing.Point(416, 312);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(19, 13);
             this.lblId.TabIndex = 3;
@@ -94,18 +96,20 @@ namespace TPWinForm_Sanchez_Flores
             // txtId
             // 
             this.txtId.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtId.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtId.Location = new System.Drawing.Point(441, 288);
+            this.txtId.Location = new System.Drawing.Point(444, 312);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(128, 20);
+            this.txtId.Size = new System.Drawing.Size(128, 13);
             this.txtId.TabIndex = 4;
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescripcion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtDescripcion.Location = new System.Drawing.Point(419, 222);
+            this.txtDescripcion.Location = new System.Drawing.Point(422, 225);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.ReadOnly = true;
@@ -121,20 +125,43 @@ namespace TPWinForm_Sanchez_Flores
             this.lblDescripcion.TabIndex = 5;
             this.lblDescripcion.Text = "Descripcion:";
             // 
-            // pictureBox1
+            // pictureArticulo
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(419, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 189);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.pictureArticulo.Location = new System.Drawing.Point(419, 12);
+            this.pictureArticulo.Name = "pictureArticulo";
+            this.pictureArticulo.Size = new System.Drawing.Size(150, 189);
+            this.pictureArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureArticulo.TabIndex = 7;
+            this.pictureArticulo.TabStop = false;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCodigo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtCodigo.Location = new System.Drawing.Point(457, 291);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.ReadOnly = true;
+            this.txtCodigo.Size = new System.Drawing.Size(115, 13);
+            this.txtCodigo.TabIndex = 9;
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(416, 291);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(43, 13);
+            this.lblCodigo.TabIndex = 8;
+            this.lblCodigo.Text = "Codigo:";
             // 
             // VentanaListaArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 395);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.txtCodigo);
+            this.Controls.Add(this.lblCodigo);
+            this.Controls.Add(this.pictureArticulo);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.txtId);
@@ -147,7 +174,7 @@ namespace TPWinForm_Sanchez_Flores
             this.Text = "Listado de Articulos";
             this.Load += new System.EventHandler(this.VentanaListaArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoArticulos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureArticulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,7 +189,9 @@ namespace TPWinForm_Sanchez_Flores
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label lblDescripcion;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureArticulo;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Label lblCodigo;
     }
 }
 

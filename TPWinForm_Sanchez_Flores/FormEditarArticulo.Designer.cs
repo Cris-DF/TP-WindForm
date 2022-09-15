@@ -167,6 +167,7 @@ namespace TPWinForm_Sanchez_Flores
             this.BoxImg.Location = new System.Drawing.Point(248, 12);
             this.BoxImg.Name = "BoxImg";
             this.BoxImg.Size = new System.Drawing.Size(194, 232);
+            this.BoxImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BoxImg.TabIndex = 16;
             this.BoxImg.TabStop = false;
             // 

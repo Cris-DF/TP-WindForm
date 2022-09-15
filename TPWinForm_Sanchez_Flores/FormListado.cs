@@ -29,6 +29,7 @@ namespace TPWinForm_Sanchez_Flores
         {
             DataArticulo datos = new DataArticulo();
 
+            //le asignamos una lista de articulos al dataGridView
             try
             {
                 listaArticulos = datos.listar();
@@ -62,14 +63,28 @@ namespace TPWinForm_Sanchez_Flores
         }
 
 
+        //evento cuando cambia la seleccion. Aplica tambien para la columna inicial
         private void dgvListadoArticulos_SelectionChanged(object sender, EventArgs e)
         {if(dgvListadoArticulos.CurrentRow!=null)
             {
 
+
                 Articulo seleccion = (Articulo)dgvListadoArticulos.CurrentRow.DataBoundItem;
 
+                //Debajo de la imagen se muestran detalles del articulo seleccionado
                 txtDescripcion.Text = seleccion.Descripcion;
                 txtId.Text = seleccion.Id.ToString();
+                txtCodigo.Text = seleccion.Codigo;
+                //esta es una carga basica de imagenes
+                try
+                {
+                    pictureArticulo.Load(seleccion.ImagenUrl);
+
+                }
+                catch
+                {
+                    pictureArticulo.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+                }
             }
 
         }
