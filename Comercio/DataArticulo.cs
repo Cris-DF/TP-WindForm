@@ -16,6 +16,7 @@ namespace Comercio
 
             try
             {
+                //Select A.Id ID, Codigo, Nombre, A.Descripcion descr, ImagenUrl, Precio, M.Descripcion Marca, C.Descripcion Categoria From ARTICULOS A left JOIN MARCAS M ON M.Id = A.IdMarca left JOIN CATEGORIAS AS C ON C.Id = A.IdCategoria
                 acceso.setQuery("Select A.Id id, Codigo, Nombre, A.Descripcion descr, ImagenUrl, Precio, M.Descripcion Marca, C.Descripcion Categoria, IdMarca, IdCategoria From ARTICULOS AS A left JOIN MARCAS M ON M.Id = A.IdMarca left JOIN CATEGORIAS AS C  ON C.Id = A.IdCategoria");
                 acceso.executeQuery();
 
