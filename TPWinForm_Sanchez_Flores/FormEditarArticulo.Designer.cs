@@ -51,7 +51,8 @@ namespace TPWinForm_Sanchez_Flores
             // 
             this.txtId.Location = new System.Drawing.Point(35, 12);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(194, 20);
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(28, 20);
             this.txtId.TabIndex = 3;
             // 
             // lblId

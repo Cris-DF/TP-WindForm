@@ -46,7 +46,8 @@ namespace TPWinForm_Sanchez_Flores
         private void ocultarColumns()
         {
             dgvListadoArticulos.Columns["ImagenUrl"].Visible = false;
-            dgvListadoArticulos.Columns["Codigo"].Visible = false;
+            //Creo que el código debería estar
+            //dgvListadoArticulos.Columns["Codigo"].Visible = false;
             dgvListadoArticulos.Columns["Id"].Visible = false;
             dgvListadoArticulos.Columns["Descripcion"].Visible = false;
         }
@@ -58,16 +59,13 @@ namespace TPWinForm_Sanchez_Flores
 
             FormEditarArticulo frmVer = new FormEditarArticulo(seleccion);
             frmVer.ShowDialog();
-
             //despues de editar el articulo la ventana actual tiene que actualizar las listas
-            
-
         }
 
 
         //evento cuando cambia la seleccion. Aplica tambien para la columna inicial
         private void dgvListadoArticulos_SelectionChanged(object sender, EventArgs e)
-        {if(dgvListadoArticulos.CurrentRow!=null)
+        {if (dgvListadoArticulos.CurrentRow != null)
             {
 
 
@@ -81,14 +79,12 @@ namespace TPWinForm_Sanchez_Flores
                 try
                 {
                     pictureArticulo.Load(seleccion.ImagenUrl);
-
                 }
                 catch
                 {
                     pictureArticulo.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
                 }
             }
-
         }
     }
 }

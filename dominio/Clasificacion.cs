@@ -15,7 +15,14 @@ namespace dominio
 
         public override string ToString()
         {
-            return ID+". "+Descripcion;
+            if (Descripcion != "")
+            {
+                return Descripcion;
+            }
+            else
+            {
+                return "Falta información";
+            }
         }
     }
 }

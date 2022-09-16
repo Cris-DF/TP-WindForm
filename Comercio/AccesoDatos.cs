@@ -12,7 +12,6 @@ namespace Comercio
         private SqlConnection connection;
         private SqlCommand command;
         private SqlDataReader reader;
-
         public SqlDataReader Reader
         {
             get { return reader; }

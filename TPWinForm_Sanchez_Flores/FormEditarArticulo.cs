@@ -24,8 +24,6 @@ namespace TPWinForm_Sanchez_Flores
 
         private void FormVerArticulo_Load(object sender, EventArgs e)
         {
-
-            //el Id no debe ser editable
             txtId.Text = articulo.Id.ToString();
 
             txtCodigo.Text = articulo.Codigo;
