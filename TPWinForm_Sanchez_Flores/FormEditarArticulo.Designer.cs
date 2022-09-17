@@ -98,6 +98,8 @@ namespace TPWinForm_Sanchez_Flores
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtDescripcion.Location = new System.Drawing.Point(11, 138);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
@@ -106,6 +108,8 @@ namespace TPWinForm_Sanchez_Flores
             // 
             // lblDescripcion
             // 
+            this.lblDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Location = new System.Drawing.Point(8, 122);
             this.lblDescripcion.Name = "lblDescripcion";
@@ -115,6 +119,7 @@ namespace TPWinForm_Sanchez_Flores
             // 
             // lblMarca
             // 
+            this.lblMarca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblMarca.AutoSize = true;
             this.lblMarca.Location = new System.Drawing.Point(8, 200);
             this.lblMarca.Name = "lblMarca";
@@ -124,6 +129,7 @@ namespace TPWinForm_Sanchez_Flores
             // 
             // lblCategoria
             // 
+            this.lblCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Location = new System.Drawing.Point(8, 227);
             this.lblCategoria.Name = "lblCategoria";
@@ -149,6 +155,9 @@ namespace TPWinForm_Sanchez_Flores
             // 
             // BoxImg
             // 
+            this.BoxImg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BoxImg.Location = new System.Drawing.Point(248, 12);
             this.BoxImg.Name = "BoxImg";
             this.BoxImg.Size = new System.Drawing.Size(194, 232);
@@ -158,6 +167,7 @@ namespace TPWinForm_Sanchez_Flores
             // 
             // cboMarca
             // 
+            this.cboMarca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cboMarca.FormattingEnabled = true;
             this.cboMarca.Location = new System.Drawing.Point(57, 197);
             this.cboMarca.Name = "cboMarca";
@@ -166,6 +176,7 @@ namespace TPWinForm_Sanchez_Flores
             // 
             // cboCategorias
             // 
+            this.cboCategorias.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cboCategorias.FormattingEnabled = true;
             this.cboCategorias.Location = new System.Drawing.Point(69, 224);
             this.cboCategorias.Name = "cboCategorias";
@@ -192,7 +203,10 @@ namespace TPWinForm_Sanchez_Flores
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblId);
+            this.MaximumSize = new System.Drawing.Size(600, 463);
+            this.MinimumSize = new System.Drawing.Size(484, 351);
             this.Name = "FormEditarArticulo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Datos del Articulo";
             this.Load += new System.EventHandler(this.FormVerArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BoxImg)).EndInit();

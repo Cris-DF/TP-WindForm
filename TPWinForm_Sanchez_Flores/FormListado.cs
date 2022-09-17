@@ -86,5 +86,30 @@ namespace TPWinForm_Sanchez_Flores
                 }
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Articulo seleccion;
+            DataArticulo dataArticulo = new DataArticulo();
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("\t Segur@? \n Se eliminara definitivamente", "Eliminar Articulo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.OK)
+                {
+                    seleccion = (Articulo)dgvListadoArticulos.CurrentRow.DataBoundItem;
+                    dataArticulo.eliminar(seleccion.Id);
+                    cargar();
+                }
+                
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+
     }
 }

@@ -80,5 +80,24 @@ namespace Comercio
 
         }
 
+        public void eliminar(int id)
+        {
+            AccesoDatos acceso = new AccesoDatos();
+            try
+            { 
+                acceso.setQuery("delete from ARTICULOS where id = " + id);
+                acceso.executeQuery();  
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                acceso.closeConnection();
+            }
+
+        }
+
     }
 }
