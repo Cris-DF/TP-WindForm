@@ -39,12 +39,15 @@ namespace TPWinForm_Sanchez_Flores
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.BoxImg = new System.Windows.Forms.PictureBox();
             this.cboMarca = new System.Windows.Forms.ComboBox();
             this.cboCategorias = new System.Windows.Forms.ComboBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.numericPrecio = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.BoxImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPrecio)).BeginInit();
             this.SuspendLayout();
             // 
             // txtId
@@ -137,13 +140,6 @@ namespace TPWinForm_Sanchez_Flores
             this.lblCategoria.TabIndex = 12;
             this.lblCategoria.Text = "Categoria:";
             // 
-            // txtPrecio
-            // 
-            this.txtPrecio.Location = new System.Drawing.Point(53, 90);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(176, 20);
-            this.txtPrecio.TabIndex = 15;
-            // 
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
@@ -168,6 +164,7 @@ namespace TPWinForm_Sanchez_Flores
             // cboMarca
             // 
             this.cboMarca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMarca.FormattingEnabled = true;
             this.cboMarca.Location = new System.Drawing.Point(57, 197);
             this.cboMarca.Name = "cboMarca";
@@ -177,21 +174,57 @@ namespace TPWinForm_Sanchez_Flores
             // cboCategorias
             // 
             this.cboCategorias.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cboCategorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategorias.FormattingEnabled = true;
             this.cboCategorias.Location = new System.Drawing.Point(69, 224);
             this.cboCategorias.Name = "cboCategorias";
             this.cboCategorias.Size = new System.Drawing.Size(159, 21);
             this.cboCategorias.TabIndex = 18;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.Location = new System.Drawing.Point(242, 277);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(84, 23);
+            this.btnCancelar.TabIndex = 20;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(125, 277);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(83, 23);
+            this.btnGuardar.TabIndex = 19;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            // 
+            // numericPrecio
+            // 
+            this.numericPrecio.DecimalPlaces = 2;
+            this.numericPrecio.Location = new System.Drawing.Point(57, 91);
+            this.numericPrecio.Maximum = new decimal(new int[] {
+            276447231,
+            23283,
+            0,
+            0});
+            this.numericPrecio.Name = "numericPrecio";
+            this.numericPrecio.Size = new System.Drawing.Size(128, 20);
+            this.numericPrecio.TabIndex = 21;
+            // 
             // FormEditarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 312);
+            this.CancelButton = this.btnCancelar;
+            this.ClientSize = new System.Drawing.Size(468, 312);
+            this.Controls.Add(this.numericPrecio);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.cboCategorias);
             this.Controls.Add(this.cboMarca);
             this.Controls.Add(this.BoxImg);
-            this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.lblMarca);
@@ -203,13 +236,14 @@ namespace TPWinForm_Sanchez_Flores
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblId);
-            this.MaximumSize = new System.Drawing.Size(600, 463);
-            this.MinimumSize = new System.Drawing.Size(484, 351);
+            this.MaximizeBox = false;
             this.Name = "FormEditarArticulo";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Datos del Articulo";
+            this.Text = "Datos del Artículo";
             this.Load += new System.EventHandler(this.FormVerArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BoxImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPrecio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,10 +261,12 @@ namespace TPWinForm_Sanchez_Flores
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Label lblCategoria;
-        private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.PictureBox BoxImg;
         private System.Windows.Forms.ComboBox cboMarca;
         private System.Windows.Forms.ComboBox cboCategorias;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.NumericUpDown numericPrecio;
     }
 }

@@ -14,33 +14,30 @@ namespace TPWinForm_Sanchez_Flores
 {
     public partial class FormEditarArticulo : Form
     {
-        Articulo articulo;
+        private Articulo articulo;
         public FormEditarArticulo(Articulo art)
         {
             InitializeComponent();
             articulo = art;
-
         }
 
         private void FormVerArticulo_Load(object sender, EventArgs e)
         {
             txtId.Text = articulo.Id.ToString();
-
             txtCodigo.Text = articulo.Codigo;
             txtNombre.Text = articulo.Nombre;
             txtDescripcion.Text = articulo.Descripcion;
-
-            txtPrecio.Text = articulo.Precio.ToString();
-
-
+            numericPrecio.Value = articulo.Precio;
             //carga basica de imagen
             try
             {
                 DataClasificacion dataClasificacion = new DataClasificacion();
-                cboCategorias.DataSource = dataClasificacion.listar("CATEGORIAS");
-                cboMarca.DataSource = dataClasificacion.listar("MARCAS");
                 
-                //PENDIENTE: que los desplegables inicien con el dato correspondiente
+                cboMarca.DataSource = dataClasificacion.listar("MARCAS");
+                cboMarca.Text = articulo.Marca.Descripcion;
+                cboCategorias.DataSource = dataClasificacion.listar("CATEGORIAS");
+                cboCategorias.Text = articulo.Categoria.Descripcion;
+                //TODO: que los desplegables inicien con el dato correspondiente
 
                 BoxImg.Load(articulo.ImagenUrl);
 

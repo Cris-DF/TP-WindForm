@@ -22,33 +22,37 @@ namespace TPWinForm_Sanchez_Flores
 
         private void VentanaListaArticulos_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'cATALOGO_DBDataSet.ARTICULOS' table. You can move, or remove it, as needed.
+            this.aRTICULOSTableAdapter.Fill(this.cATALOGO_DBDataSet.ARTICULOS);
             cargar();
         }
 
         private void cargar()
         {
             DataArticulo datos = new DataArticulo();
-
             //le asignamos una lista de articulos al dataGridView
             try
             {
                 listaArticulos = datos.listar();
                 dgvListadoArticulos.DataSource = listaArticulos;
-                ocultarColumns();
+                columnsProperties();
                 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+            //TODO: ver como hacer una lista desplegable con las opciones de filtro
+            //cbOpcionesFiltro.Items.Add(dgvListadoArticulos.);
+           
+           // cbOpcionesFiltro.DataSource = dgvListadoArticulos.ColumnCount;
         }
 
-        private void ocultarColumns()
+        private void columnsProperties()
         {
+            dgvListadoArticulos.AllowUserToOrderColumns = true;
             dgvListadoArticulos.Columns["ImagenUrl"].Visible = false;
-            //Creo que el código debería estar
-            //dgvListadoArticulos.Columns["Codigo"].Visible = false;
-            dgvListadoArticulos.Columns["Id"].Visible = false;
+            dgvListadoArticulos.Columns["Codigo"].Visible = false;
             dgvListadoArticulos.Columns["Descripcion"].Visible = false;
         }
 
@@ -73,7 +77,6 @@ namespace TPWinForm_Sanchez_Flores
 
                 //Debajo de la imagen se muestran detalles del articulo seleccionado
                 txtDescripcion.Text = seleccion.Descripcion;
-                txtId.Text = seleccion.Id.ToString();
                 txtCodigo.Text = seleccion.Codigo;
                 //esta es una carga basica de imagenes
                 try
@@ -110,6 +113,10 @@ namespace TPWinForm_Sanchez_Flores
 
         }
 
-
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            FormAgregarArticulo frmAgregar = new FormAgregarArticulo();
+            frmAgregar.ShowDialog();
+        }
     }
 }
