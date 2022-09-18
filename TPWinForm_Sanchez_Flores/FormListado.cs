@@ -59,6 +59,7 @@ namespace TPWinForm_Sanchez_Flores
 
             FormEditarArticulo frmVer = new FormEditarArticulo(seleccion);
             frmVer.ShowDialog();
+            cargar();
             //despues de editar el articulo la ventana actual tiene que actualizar las listas
         }
 
@@ -115,6 +116,13 @@ namespace TPWinForm_Sanchez_Flores
             //Busqueda
         }
 
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
 
+            FormEditarArticulo frmVer = new FormEditarArticulo();
+            frmVer.ShowDialog();
+            cargar();
+
+        }
     }
 }

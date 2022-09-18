@@ -14,7 +14,8 @@ namespace TPWinForm_Sanchez_Flores
 {
     public partial class FormEditarArticulo : Form
     {
-        Articulo articulo;
+        private Articulo articulo=null;
+
         public FormEditarArticulo(Articulo art)
         {
             InitializeComponent();
@@ -22,15 +23,14 @@ namespace TPWinForm_Sanchez_Flores
 
         }
 
+        public FormEditarArticulo()
+        {
+            InitializeComponent();
+        }
+
         private void FormVerArticulo_Load(object sender, EventArgs e)
         {
-            txtId.Text = articulo.Id.ToString();
-
-            txtCodigo.Text = articulo.Codigo;
-            txtNombre.Text = articulo.Nombre;
-            txtDescripcion.Text = articulo.Descripcion;
-
-            txtPrecio.Text = articulo.Precio.ToString();
+            
 
 
             //carga basica de imagen
@@ -38,23 +38,95 @@ namespace TPWinForm_Sanchez_Flores
             {
                 DataClasificacion dataClasificacion = new DataClasificacion();
                 cboCategorias.DataSource = dataClasificacion.listar("CATEGORIAS");
+                cboCategorias.DisplayMember = "Descripcion";
+                cboCategorias.ValueMember = "ID";
                 cboMarca.DataSource = dataClasificacion.listar("MARCAS");
-                
+                cboMarca.DisplayMember = "Descripcion";
+                cboMarca.ValueMember = "ID";
                 //PENDIENTE: que los desplegables inicien con el dato correspondiente
 
-                BoxImg.Load(articulo.ImagenUrl);
+
+                if (articulo != null)
+                {
+                    txtId.Text = articulo.Id.ToString();
+                    txtCodigo.Text = articulo.Codigo;
+                    txtNombre.Text = articulo.Nombre;
+                    txtDescripcion.Text = articulo.Descripcion;
+                    txtPrecio.Text = articulo.Precio.ToString();
+                    cboCategorias.SelectedValue = articulo.Categoria.ID;
+                    cboMarca.SelectedValue = articulo.Marca.ID;
+                    txtImagenUrl.Text = articulo.ImagenUrl;
+                    cargarImagen(articulo.ImagenUrl);
+                }
 
             }
-            catch
+            catch(Exception ex)
             {
-                BoxImg.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+                MessageBox.Show(ex.ToString());
             }
 
         }
 
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                BoxImg.Load(imagen);
+            }
+            catch 
+            {
+                BoxImg.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+            }
+        }
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            Close();
+        }
 
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            DataArticulo dataArticulo = new DataArticulo();
+            try
+            {
+                // el articulo puede estar null si estamos agregando uno nuevo
+                if (articulo == null)
+                {
+                    articulo = new Articulo();
+                }
+
+                articulo.Codigo = txtCodigo.Text;
+                articulo.Nombre = txtNombre.Text;
+                articulo.Precio = float.Parse(txtPrecio.Text); // convertir
+                articulo.Descripcion = txtDescripcion.Text;
+                articulo.ImagenUrl = txtImagenUrl.Text;
+                articulo.Categoria = (Clasificacion)cboCategorias.SelectedItem;
+                articulo.Marca = (Clasificacion)cboMarca.SelectedItem;
+
+                if(articulo.Id == 0)
+                {
+                    dataArticulo.agregar(articulo);
+                    MessageBox.Show(articulo.Nombre + " Agregado" );
+                }
+                else
+                {
+                    //modificar
+                }
+
+                Close();
+            }
+            catch
+            {
+
+            }
+
+        }
+
+
+        private void txtImagenUrl_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txtImagenUrl.Text);
         }
     }
 }

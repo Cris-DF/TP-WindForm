@@ -48,7 +48,6 @@ namespace TPWinForm_Sanchez_Flores
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtImagenUrl = new System.Windows.Forms.TextBox();
             this.lblImagenUrl = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.BoxImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,7 +107,7 @@ namespace TPWinForm_Sanchez_Flores
             this.txtDescripcion.Location = new System.Drawing.Point(12, 114);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(217, 53);
+            this.txtDescripcion.Size = new System.Drawing.Size(217, 57);
             this.txtDescripcion.TabIndex = 9;
             // 
             // lblDescripcion
@@ -126,7 +125,7 @@ namespace TPWinForm_Sanchez_Flores
             // 
             this.lblMarca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(9, 176);
+            this.lblMarca.Location = new System.Drawing.Point(9, 180);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(40, 13);
             this.lblMarca.TabIndex = 10;
@@ -136,7 +135,7 @@ namespace TPWinForm_Sanchez_Flores
             // 
             this.lblCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(9, 203);
+            this.lblCategoria.Location = new System.Drawing.Point(9, 207);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(55, 13);
             this.lblCategoria.TabIndex = 12;
@@ -165,7 +164,7 @@ namespace TPWinForm_Sanchez_Flores
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BoxImg.Location = new System.Drawing.Point(248, 12);
             this.BoxImg.Name = "BoxImg";
-            this.BoxImg.Size = new System.Drawing.Size(209, 288);
+            this.BoxImg.Size = new System.Drawing.Size(209, 308);
             this.BoxImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BoxImg.TabIndex = 16;
             this.BoxImg.TabStop = false;
@@ -174,7 +173,7 @@ namespace TPWinForm_Sanchez_Flores
             // 
             this.cboMarca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cboMarca.FormattingEnabled = true;
-            this.cboMarca.Location = new System.Drawing.Point(54, 173);
+            this.cboMarca.Location = new System.Drawing.Point(54, 177);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(175, 21);
             this.cboMarca.TabIndex = 17;
@@ -183,23 +182,26 @@ namespace TPWinForm_Sanchez_Flores
             // 
             this.cboCategorias.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cboCategorias.FormattingEnabled = true;
-            this.cboCategorias.Location = new System.Drawing.Point(70, 200);
+            this.cboCategorias.Location = new System.Drawing.Point(70, 204);
             this.cboCategorias.Name = "cboCategorias";
             this.cboCategorias.Size = new System.Drawing.Size(159, 21);
             this.cboCategorias.TabIndex = 18;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(11, 277);
+            this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAceptar.Location = new System.Drawing.Point(9, 297);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 19;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(96, 277);
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCancelar.Location = new System.Drawing.Point(90, 297);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 20;
@@ -209,35 +211,30 @@ namespace TPWinForm_Sanchez_Flores
             // 
             // txtImagenUrl
             // 
-            this.txtImagenUrl.Location = new System.Drawing.Point(54, 227);
+            this.txtImagenUrl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtImagenUrl.Location = new System.Drawing.Point(12, 244);
+            this.txtImagenUrl.Multiline = true;
             this.txtImagenUrl.Name = "txtImagenUrl";
-            this.txtImagenUrl.Size = new System.Drawing.Size(117, 20);
+            this.txtImagenUrl.Size = new System.Drawing.Size(218, 47);
             this.txtImagenUrl.TabIndex = 22;
+
+            this.txtImagenUrl.Leave += new System.EventHandler(this.txtImagenUrl_Leave);
             // 
             // lblImagenUrl
             // 
+            this.lblImagenUrl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblImagenUrl.AutoSize = true;
-            this.lblImagenUrl.Location = new System.Drawing.Point(8, 230);
+            this.lblImagenUrl.Location = new System.Drawing.Point(8, 228);
             this.lblImagenUrl.Name = "lblImagenUrl";
-            this.lblImagenUrl.Size = new System.Drawing.Size(45, 13);
+            this.lblImagenUrl.Size = new System.Drawing.Size(76, 13);
             this.lblImagenUrl.TabIndex = 21;
-            this.lblImagenUrl.Text = "Imagen:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(177, 225);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(52, 23);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.lblImagenUrl.Text = "Url de Imagen:";
             // 
             // FormEditarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 312);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(469, 332);
             this.Controls.Add(this.txtImagenUrl);
             this.Controls.Add(this.lblImagenUrl);
             this.Controls.Add(this.btnCancelar);
@@ -290,6 +287,5 @@ namespace TPWinForm_Sanchez_Flores
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtImagenUrl;
         private System.Windows.Forms.Label lblImagenUrl;
-        private System.Windows.Forms.Button button1;
     }
 }

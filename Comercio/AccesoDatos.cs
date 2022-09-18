@@ -43,6 +43,26 @@ namespace Comercio
             }
         }
 
+
+        public void ejecutar()
+        {
+            command.Connection = connection;
+            try
+            {
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void setParametro(string nombre, object valor)
+        {
+            command.Parameters.AddWithValue(nombre, valor);
+        }
+
         public void closeConnection()
         {
             if (reader != null)

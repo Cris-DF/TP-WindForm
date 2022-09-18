@@ -96,6 +96,7 @@ namespace TPWinForm_Sanchez_Flores
             this.btnNuevo.TabIndex = 2;
             this.btnNuevo.Text = "Nuevo Articulo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // lblId
             // 
@@ -158,6 +159,7 @@ namespace TPWinForm_Sanchez_Flores
             this.txtCodigo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCodigo.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCodigo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtCodigo.Location = new System.Drawing.Point(469, 388);
             this.txtCodigo.Name = "txtCodigo";
