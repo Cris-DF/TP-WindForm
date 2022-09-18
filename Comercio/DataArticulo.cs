@@ -103,6 +103,29 @@ namespace Comercio
 
         }
 
+        public void modificar(Articulo articulo)
+        {
+            AccesoDatos acceso = new AccesoDatos();
+
+            try
+            {
+                acceso.setQuery("update ARTICULOS set Codigo = @codigo, Nombre = @nombre, Descripcion = @desc, IdMarca = @idMarca, IdCategoria = @idCategoria, ImagenUrl = @Url, Precio = @precio Where Id =" + articulo.Id);
+                setearParametros(acceso, articulo);
+                acceso.ejecutar();
+
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                acceso.closeConnection();
+            }
+
+            
+        }
+
 
         private void setearParametros(AccesoDatos accesoDatos,Articulo art)
         {
