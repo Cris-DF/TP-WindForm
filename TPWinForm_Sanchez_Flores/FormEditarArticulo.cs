@@ -111,7 +111,7 @@ namespace TPWinForm_Sanchez_Flores
                 }
                 else
                 {
-                    //modificar
+                    dataArticulo.modificar(articulo);
                 }
 
                 Close();
