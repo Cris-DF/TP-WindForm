@@ -52,7 +52,7 @@ namespace TPWinForm_Sanchez_Flores
                     txtCodigo.Text = articulo.Codigo;
                     txtNombre.Text = articulo.Nombre;
                     txtDescripcion.Text = articulo.Descripcion;
-                    txtPrecio.Text = articulo.Precio.ToString();
+                    numPrecio.Value = (decimal)articulo.Precio;
                     cboCategorias.SelectedValue = articulo.Categoria.ID;
                     cboMarca.SelectedValue = articulo.Marca.ID;
                     txtImagenUrl.Text = articulo.ImagenUrl;
@@ -96,31 +96,76 @@ namespace TPWinForm_Sanchez_Flores
                     articulo = new Articulo();
                 }
 
+
+                
+                if (validarIngresos())
+                {
+                    return;
+                }
+                
                 articulo.Codigo = txtCodigo.Text;
                 articulo.Nombre = txtNombre.Text;
-                articulo.Precio = float.Parse(txtPrecio.Text); // convertir
+                articulo.Precio = (float)numPrecio.Value; //   convertir
                 articulo.Descripcion = txtDescripcion.Text;
                 articulo.ImagenUrl = txtImagenUrl.Text;
-                articulo.Categoria = (Clasificacion)cboCategorias.SelectedItem;
-                articulo.Marca = (Clasificacion)cboMarca.SelectedItem;
+                articulo.Categoria = (Clasificacion)                cboCategorias.SelectedItem;
+                articulo.Marca = (Clasificacion)                    cboMarca.SelectedItem;
+                
+                
 
                 if(articulo.Id == 0)
                 {
                     dataArticulo.agregar(articulo);
-                    MessageBox.Show(articulo.Nombre + " Agregado" );
+                    MessageBox.Show(articulo.Marca+ " " +articulo.Nombre + " Agregado" );
                 }
                 else
                 {
                     dataArticulo.modificar(articulo);
+                    MessageBox.Show(articulo.Marca + " " + articulo.Nombre + " Modificado");
                 }
 
                 Close();
             }
-            catch
+            catch(Exception ex)
             {
-
+                throw ex;
             }
 
+        }
+
+        private bool validarIngresos()
+        {
+            bool error = false;
+            string mensaje = "Error de longitud del campo de texto";
+
+            if (txtCodigo.Text.Length > 50) {
+                error = true;
+                mensaje += ", Codigo(max 50)";
+            }
+            if (txtNombre.Text.Length > 50)
+            {
+                error = true;
+                mensaje += ", Nombre(max 50)";
+            }
+            if (txtDescripcion.Text.Length > 150)
+            {
+                error = true;
+                mensaje += ", Descripcion(max 150)";
+            }
+            if (txtImagenUrl.Text.Length > 1000)
+            {
+                error = true;
+                mensaje += ", Url(max 1000)";
+            }
+
+
+            if (error)
+            {
+                MessageBox.Show(mensaje);
+            }
+            
+
+            return error;
         }
 
 
