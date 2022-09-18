@@ -17,7 +17,7 @@ namespace Comercio
             try
             {
                 
-                acceso.setQuery("Select A.Id id, Codigo, Nombre, A.Descripcion descr, ImagenUrl, Precio, M.Descripcion Marca, C.Descripcion Categoria From ARTICULOS A left JOIN MARCAS M ON M.Id = A.IdMarca left JOIN CATEGORIAS AS C ON C.Id = A.IdCategoria");
+                acceso.setQuery("Select A.Id id, Codigo, Nombre, A.Descripcion descr, ImagenUrl, Precio, M.Descripcion Marca, C.Descripcion Categoria, IdMarca, IdCategoria From ARTICULOS AS A left JOIN MARCAS M ON M.Id = A.IdMarca left JOIN CATEGORIAS AS C  ON C.Id = A.IdCategoria");
                 acceso.executeQuery();
 
                 //lectura con VARIAS validaciones por los NULL en DB_CATALOGO
@@ -55,11 +55,11 @@ namespace Comercio
                     articulo.Categoria.Descripcion = acceso.Reader["Categoria"] is DBNull?
                         "" :(string)acceso.Reader["Categoria"];
 
-                    //Comentado porque no lo vi necesario
-                    //if (!(acceso.Reader["IdMarca"] is DBNull))
-                    //    articulo.Marca.ID = (int)acceso.Reader["IdMarca"];
-                    //if (!(acceso.Reader["IdCategoria"] is DBNull))
-                    //    articulo.Categoria.ID = (int)acceso.Reader["IdCategoria"];
+                    //es necesario tener el id del articulo para recuperar el dato cuando lo editemos
+                    if (!(acceso.Reader["IdMarca"] is DBNull))
+                       articulo.Marca.ID = (int)acceso.Reader["IdMarca"];
+                    if (!(acceso.Reader["IdCategoria"] is DBNull))
+                      articulo.Categoria.ID = (int)acceso.Reader["IdCategoria"];
 
                     lista.Add(articulo);
                 }

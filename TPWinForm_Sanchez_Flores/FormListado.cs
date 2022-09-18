@@ -46,8 +46,8 @@ namespace TPWinForm_Sanchez_Flores
         private void ocultarColumns()
         {
             dgvListadoArticulos.Columns["ImagenUrl"].Visible = false;
-            //Creo que el código debería estar
-            //dgvListadoArticulos.Columns["Codigo"].Visible = false;
+            //El codigo ya estaba en la parte derecha como detalle
+            dgvListadoArticulos.Columns["Codigo"].Visible = false;
             dgvListadoArticulos.Columns["Id"].Visible = false;
             dgvListadoArticulos.Columns["Descripcion"].Visible = false;
         }
@@ -108,6 +108,11 @@ namespace TPWinForm_Sanchez_Flores
                 MessageBox.Show(ex.ToString());
             }
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Busqueda
         }
 
 
