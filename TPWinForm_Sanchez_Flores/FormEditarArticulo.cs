@@ -26,6 +26,10 @@ namespace TPWinForm_Sanchez_Flores
         public FormEditarArticulo()
         {
             InitializeComponent();
+            txtId.Visible = false;
+            lblId.Visible = false;
+            cargarImagen("");
+            Text = "Nuevo Articulo";
         }
 
         private void FormVerArticulo_Load(object sender, EventArgs e)
@@ -142,11 +146,25 @@ namespace TPWinForm_Sanchez_Flores
                 error = true;
                 mensaje += ", Codigo(max 50)";
             }
+            else if (txtCodigo.Text.Length <1)
+            {
+                
+                error = true;
+                mensaje += ", Codigo no puede estar vacio";
+            }
             if (txtNombre.Text.Length > 50)
             {
                 error = true;
                 mensaje += ", Nombre(max 50)";
             }
+            else if (txtNombre.Text.Length < 1)
+            {
+
+                error = true;
+                mensaje += ", Nombre no puede estar vacio";
+            }
+
+
             if (txtDescripcion.Text.Length > 150)
             {
                 error = true;

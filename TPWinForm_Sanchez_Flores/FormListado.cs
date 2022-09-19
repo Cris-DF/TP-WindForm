@@ -22,7 +22,18 @@ namespace TPWinForm_Sanchez_Flores
 
         private void VentanaListaArticulos_Load(object sender, EventArgs e)
         {
+            DataClasificacion dataClas = new DataClasificacion();
             cargar();
+
+            cboFiltroCategoria.DataSource = dataClas.listar("CATEGORIAS");
+            cboFiltroCategoria.DisplayMember = "Descripcion";
+            cboFiltroCategoria.ValueMember = "ID";
+            cboFiltroCategoria.SelectedIndex = -1;
+
+            cboFiltroMarca.DataSource = dataClas.listar("MARCAS");
+            cboFiltroMarca.DisplayMember = "Descripcion";
+            cboFiltroMarca.ValueMember = "ID";
+            cboFiltroMarca.SelectedIndex = -1;
         }
 
         private void cargar()
@@ -111,10 +122,7 @@ namespace TPWinForm_Sanchez_Flores
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //Busqueda
-        }
+     
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -123,6 +131,51 @@ namespace TPWinForm_Sanchez_Flores
             frmVer.ShowDialog();
             cargar();
 
+        }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            List<Articulo> listaResultado = new List<Articulo>();
+            string busqueda = txtBusqueda.Text;
+
+            if(busqueda.Length > 2)
+            {
+                listaResultado= listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(busqueda.ToUpper()) || x.Descripcion.ToUpper().Contains(busqueda.ToUpper()));
+            }
+            else
+            {
+                listaResultado = listaArticulos;
+            }
+
+            dgvListadoArticulos.DataSource = null;
+            dgvListadoArticulos.DataSource = listaResultado;
+            ocultarColumns();
+
+
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+
+            cargar();
+
+            if(cboFiltroCategoria.SelectedIndex >= 0)
+            {
+                int cat = (int)cboFiltroCategoria.SelectedValue;
+                listaArticulos = listaArticulos.FindAll(x => x.Categoria.ID == cat);
+            }
+            if (cboFiltroMarca.SelectedIndex >= 0)
+            {
+                int marca = (int)cboFiltroMarca.SelectedValue;
+                listaArticulos = listaArticulos.FindAll(x => x.Marca.ID == marca);
+            }
+            dgvListadoArticulos.DataSource = null;
+            dgvListadoArticulos.DataSource = listaArticulos ;
+            ocultarColumns();
+
+            //reiniciar los cbo
+            cboFiltroCategoria.SelectedIndex = -1;
+            cboFiltroMarca.SelectedIndex = -1;
         }
     }
 }

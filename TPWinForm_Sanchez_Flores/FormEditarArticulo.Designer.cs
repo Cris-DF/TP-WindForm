@@ -81,9 +81,9 @@ namespace TPWinForm_Sanchez_Flores
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Location = new System.Drawing.Point(67, 15);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(43, 13);
+            this.lblCodigo.Size = new System.Drawing.Size(47, 13);
             this.lblCodigo.TabIndex = 4;
-            this.lblCodigo.Text = "Codigo:";
+            this.lblCodigo.Text = "Codigo*:";
             // 
             // txtNombre
             // 
@@ -97,9 +97,9 @@ namespace TPWinForm_Sanchez_Flores
             this.lblNombre.AutoSize = true;
             this.lblNombre.Location = new System.Drawing.Point(9, 43);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(47, 13);
+            this.lblNombre.Size = new System.Drawing.Size(51, 13);
             this.lblNombre.TabIndex = 6;
-            this.lblNombre.Text = "Nombre:";
+            this.lblNombre.Text = "Nombre*:";
             // 
             // txtDescripcion
             // 
