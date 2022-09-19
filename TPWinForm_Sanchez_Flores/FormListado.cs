@@ -23,17 +23,28 @@ namespace TPWinForm_Sanchez_Flores
         private void VentanaListaArticulos_Load(object sender, EventArgs e)
         {
             DataClasificacion dataClas = new DataClasificacion();
-            cargar();
+            Clasificacion clasifVacia = new Clasificacion();
+            clasifVacia.ID = -1; clasifVacia.Descripcion = "";
 
-            cboFiltroCategoria.DataSource = dataClas.listar("CATEGORIAS");
+            cargar();
+            
+            //A los siguientes desplegables se les inseta una clasificacion vacia
+            //para poder quitar los filtros de manera intuitiva
+
+            List<Clasificacion> categorias = dataClas.listar("CATEGORIAS"); categorias.Insert(0,clasifVacia);
+            cboFiltroCategoria.DataSource = categorias;
             cboFiltroCategoria.DisplayMember = "Descripcion";
             cboFiltroCategoria.ValueMember = "ID";
-            cboFiltroCategoria.SelectedIndex = -1;
+            cboFiltroCategoria.SelectedIndex = 0;
 
-            cboFiltroMarca.DataSource = dataClas.listar("MARCAS");
+            List<Clasificacion> marcas = dataClas.listar("MARCAS"); marcas.Insert(0, clasifVacia);
+            cboFiltroMarca.DataSource = marcas;
             cboFiltroMarca.DisplayMember = "Descripcion";
             cboFiltroMarca.ValueMember = "ID";
-            cboFiltroMarca.SelectedIndex = -1;
+            cboFiltroMarca.SelectedIndex = 0;
+
+            
+         
         }
 
         private void cargar()
@@ -45,6 +56,7 @@ namespace TPWinForm_Sanchez_Flores
             {
                 listaArticulos = datos.listar();
                 dgvListadoArticulos.DataSource = listaArticulos;
+                
                 ocultarColumns();
                 
             }
@@ -57,7 +69,6 @@ namespace TPWinForm_Sanchez_Flores
         private void ocultarColumns()
         {
             dgvListadoArticulos.Columns["ImagenUrl"].Visible = false;
-            //El codigo ya estaba en la parte derecha como detalle
             dgvListadoArticulos.Columns["Codigo"].Visible = false;
             dgvListadoArticulos.Columns["Id"].Visible = false;
             dgvListadoArticulos.Columns["Descripcion"].Visible = false;
@@ -65,13 +76,17 @@ namespace TPWinForm_Sanchez_Flores
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if(dgvListadoArticulos.CurrentRow != null)
+            {
+                Articulo seleccion = (Articulo)dgvListadoArticulos.CurrentRow.DataBoundItem;
+                FormEditarArticulo frmVer = new FormEditarArticulo(seleccion);
+                frmVer.ShowDialog();
+                //despues de editar el articulo la ventana actual tiene que actualizar las listas
+                 cargar();
+            }
+            
 
-            Articulo seleccion = (Articulo)dgvListadoArticulos.CurrentRow.DataBoundItem;
-
-            FormEditarArticulo frmVer = new FormEditarArticulo(seleccion);
-            frmVer.ShowDialog();
-            cargar();
-            //despues de editar el articulo la ventana actual tiene que actualizar las listas
+            
         }
 
 
@@ -79,8 +94,6 @@ namespace TPWinForm_Sanchez_Flores
         private void dgvListadoArticulos_SelectionChanged(object sender, EventArgs e)
         {if (dgvListadoArticulos.CurrentRow != null)
             {
-
-
                 Articulo seleccion = (Articulo)dgvListadoArticulos.CurrentRow.DataBoundItem;
 
                 //Debajo de la imagen se muestran detalles del articulo seleccionado
@@ -105,19 +118,23 @@ namespace TPWinForm_Sanchez_Flores
             DataArticulo dataArticulo = new DataArticulo();
             try
             {
-                DialogResult respuesta = MessageBox.Show("\t Segur@? \n Se eliminara definitivamente", "Eliminar Articulo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                if (respuesta == DialogResult.OK)
+                if (dgvListadoArticulos.CurrentRow != null)
                 {
-                    seleccion = (Articulo)dgvListadoArticulos.CurrentRow.DataBoundItem;
-                    dataArticulo.eliminar(seleccion.Id);
-                    cargar();
+
+                    DialogResult respuesta = MessageBox.Show("\t Segur@? \n Se eliminara definitivamente", "Eliminar Articulo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (respuesta == DialogResult.OK)
+                    {
+                        seleccion = (Articulo)dgvListadoArticulos.CurrentRow.DataBoundItem;
+                        dataArticulo.eliminar(seleccion.Id);
+                        cargar();
+                    }
                 }
                 
 
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Error, no se pudo eliminar: " + ex.ToString());
             }
 
         }
@@ -138,6 +155,7 @@ namespace TPWinForm_Sanchez_Flores
             List<Articulo> listaResultado = new List<Articulo>();
             string busqueda = txtBusqueda.Text;
 
+            
             if(busqueda.Length > 2)
             {
                 listaResultado= listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(busqueda.ToUpper()) || x.Descripcion.ToUpper().Contains(busqueda.ToUpper()));
@@ -157,25 +175,27 @@ namespace TPWinForm_Sanchez_Flores
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
 
+            //se carga la lista completa para no acumular filtros
             cargar();
 
-            if(cboFiltroCategoria.SelectedIndex >= 0)
+            //solo filtramos si el valor no es el elemento vacio con valor -1
+            if((int)cboFiltroCategoria.SelectedValue != -1)
             {
                 int cat = (int)cboFiltroCategoria.SelectedValue;
                 listaArticulos = listaArticulos.FindAll(x => x.Categoria.ID == cat);
             }
-            if (cboFiltroMarca.SelectedIndex >= 0)
+
+            if ((int)cboFiltroMarca.SelectedValue != -1)
             {
                 int marca = (int)cboFiltroMarca.SelectedValue;
                 listaArticulos = listaArticulos.FindAll(x => x.Marca.ID == marca);
             }
+
             dgvListadoArticulos.DataSource = null;
             dgvListadoArticulos.DataSource = listaArticulos ;
             ocultarColumns();
 
-            //reiniciar los cbo
-            cboFiltroCategoria.SelectedIndex = -1;
-            cboFiltroMarca.SelectedIndex = -1;
+            
         }
     }
 }

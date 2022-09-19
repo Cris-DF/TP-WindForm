@@ -58,7 +58,7 @@ namespace TPWinForm_Sanchez_Flores
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(28, 20);
-            this.txtId.TabIndex = 3;
+            this.txtId.TabIndex = 12;
             // 
             // lblId
             // 
@@ -66,7 +66,7 @@ namespace TPWinForm_Sanchez_Flores
             this.lblId.Location = new System.Drawing.Point(8, 15);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(21, 13);
-            this.lblId.TabIndex = 2;
+            this.lblId.TabIndex = 13;
             this.lblId.Text = "ID:";
             // 
             // txtCodigo
@@ -74,7 +74,7 @@ namespace TPWinForm_Sanchez_Flores
             this.txtCodigo.Location = new System.Drawing.Point(116, 12);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(113, 20);
-            this.txtCodigo.TabIndex = 5;
+            this.txtCodigo.TabIndex = 1;
             // 
             // lblCodigo
             // 
@@ -82,7 +82,7 @@ namespace TPWinForm_Sanchez_Flores
             this.lblCodigo.Location = new System.Drawing.Point(67, 15);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(47, 13);
-            this.lblCodigo.TabIndex = 4;
+            this.lblCodigo.TabIndex = 11;
             this.lblCodigo.Text = "Codigo*:";
             // 
             // txtNombre
@@ -90,7 +90,7 @@ namespace TPWinForm_Sanchez_Flores
             this.txtNombre.Location = new System.Drawing.Point(58, 40);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(172, 20);
-            this.txtNombre.TabIndex = 7;
+            this.txtNombre.TabIndex = 2;
             // 
             // lblNombre
             // 
@@ -98,7 +98,7 @@ namespace TPWinForm_Sanchez_Flores
             this.lblNombre.Location = new System.Drawing.Point(9, 43);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(51, 13);
-            this.lblNombre.TabIndex = 6;
+            this.lblNombre.TabIndex = 14;
             this.lblNombre.Text = "Nombre*:";
             // 
             // txtDescripcion
@@ -109,7 +109,7 @@ namespace TPWinForm_Sanchez_Flores
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(217, 57);
-            this.txtDescripcion.TabIndex = 9;
+            this.txtDescripcion.TabIndex = 4;
             // 
             // lblDescripcion
             // 
@@ -119,8 +119,9 @@ namespace TPWinForm_Sanchez_Flores
             this.lblDescripcion.Location = new System.Drawing.Point(9, 98);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(66, 13);
-            this.lblDescripcion.TabIndex = 8;
+            this.lblDescripcion.TabIndex = 16;
             this.lblDescripcion.Text = "Descripcion:";
+            
             // 
             // lblMarca
             // 
@@ -129,7 +130,7 @@ namespace TPWinForm_Sanchez_Flores
             this.lblMarca.Location = new System.Drawing.Point(9, 180);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(40, 13);
-            this.lblMarca.TabIndex = 10;
+            this.lblMarca.TabIndex = 17;
             this.lblMarca.Text = "Marca:";
             // 
             // lblCategoria
@@ -139,7 +140,7 @@ namespace TPWinForm_Sanchez_Flores
             this.lblCategoria.Location = new System.Drawing.Point(9, 207);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(55, 13);
-            this.lblCategoria.TabIndex = 12;
+            this.lblCategoria.TabIndex = 0;
             this.lblCategoria.Text = "Categoria:";
             // 
             // lblPrecio
@@ -148,7 +149,7 @@ namespace TPWinForm_Sanchez_Flores
             this.lblPrecio.Location = new System.Drawing.Point(9, 69);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(40, 13);
-            this.lblPrecio.TabIndex = 14;
+            this.lblPrecio.TabIndex = 15;
             this.lblPrecio.Text = "Precio:";
             // 
             // BoxImg
@@ -171,7 +172,7 @@ namespace TPWinForm_Sanchez_Flores
             this.cboMarca.Location = new System.Drawing.Point(54, 177);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(175, 21);
-            this.cboMarca.TabIndex = 17;
+            this.cboMarca.TabIndex = 5;
             // 
             // cboCategorias
             // 
@@ -181,7 +182,7 @@ namespace TPWinForm_Sanchez_Flores
             this.cboCategorias.Location = new System.Drawing.Point(70, 204);
             this.cboCategorias.Name = "cboCategorias";
             this.cboCategorias.Size = new System.Drawing.Size(159, 21);
-            this.cboCategorias.TabIndex = 18;
+            this.cboCategorias.TabIndex = 6;
             // 
             // btnAceptar
             // 
@@ -189,7 +190,7 @@ namespace TPWinForm_Sanchez_Flores
             this.btnAceptar.Location = new System.Drawing.Point(9, 297);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 19;
+            this.btnAceptar.TabIndex = 8;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -200,7 +201,7 @@ namespace TPWinForm_Sanchez_Flores
             this.btnCancelar.Location = new System.Drawing.Point(90, 297);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 20;
+            this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -212,7 +213,7 @@ namespace TPWinForm_Sanchez_Flores
             this.txtImagenUrl.Multiline = true;
             this.txtImagenUrl.Name = "txtImagenUrl";
             this.txtImagenUrl.Size = new System.Drawing.Size(218, 47);
-            this.txtImagenUrl.TabIndex = 22;
+            this.txtImagenUrl.TabIndex = 7;
             this.txtImagenUrl.Leave += new System.EventHandler(this.txtImagenUrl_Leave);
             // 
             // lblImagenUrl
@@ -222,8 +223,9 @@ namespace TPWinForm_Sanchez_Flores
             this.lblImagenUrl.Location = new System.Drawing.Point(8, 228);
             this.lblImagenUrl.Name = "lblImagenUrl";
             this.lblImagenUrl.Size = new System.Drawing.Size(76, 13);
-            this.lblImagenUrl.TabIndex = 21;
+            this.lblImagenUrl.TabIndex = 1;
             this.lblImagenUrl.Text = "Url de Imagen:";
+            
             // 
             // numPrecio
             // 
@@ -236,7 +238,7 @@ namespace TPWinForm_Sanchez_Flores
             0});
             this.numPrecio.Name = "numPrecio";
             this.numPrecio.Size = new System.Drawing.Size(172, 20);
-            this.numPrecio.TabIndex = 23;
+            this.numPrecio.TabIndex = 3;
             // 
             // FormEditarArticulo
             // 

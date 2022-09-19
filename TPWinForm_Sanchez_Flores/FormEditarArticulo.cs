@@ -26,6 +26,8 @@ namespace TPWinForm_Sanchez_Flores
         public FormEditarArticulo()
         {
             InitializeComponent();
+
+            //ocultamos el Id porque corresponde a la DB y no al usuario
             txtId.Visible = false;
             lblId.Visible = false;
             cargarImagen("");
@@ -35,9 +37,6 @@ namespace TPWinForm_Sanchez_Flores
         private void FormVerArticulo_Load(object sender, EventArgs e)
         {
             
-
-
-            //carga basica de imagen
             try
             {
                 DataClasificacion dataClasificacion = new DataClasificacion();
@@ -47,9 +46,9 @@ namespace TPWinForm_Sanchez_Flores
                 cboMarca.DataSource = dataClasificacion.listar("MARCAS");
                 cboMarca.DisplayMember = "Descripcion";
                 cboMarca.ValueMember = "ID";
-                //PENDIENTE: que los desplegables inicien con el dato correspondiente
 
 
+                //si articulo no es nulo: hay datos existentes, se cargan esos datos en el form
                 if (articulo != null)
                 {
                     txtId.Text = articulo.Id.ToString();
@@ -94,28 +93,25 @@ namespace TPWinForm_Sanchez_Flores
             DataArticulo dataArticulo = new DataArticulo();
             try
             {
-                // el articulo puede estar null si estamos agregando uno nuevo
+                // luego de aqui el articulo no puede ser null 
                 if (articulo == null)
                 {
                     articulo = new Articulo();
                 }
-
-
                 
                 if (validarIngresos())
                 {
                     return;
-                }
+                } 
                 
                 articulo.Codigo = txtCodigo.Text;
                 articulo.Nombre = txtNombre.Text;
                 articulo.Precio = (float)numPrecio.Value; //   convertir
                 articulo.Descripcion = txtDescripcion.Text;
                 articulo.ImagenUrl = txtImagenUrl.Text;
-                articulo.Categoria = (Clasificacion)                cboCategorias.SelectedItem;
-                articulo.Marca = (Clasificacion)                    cboMarca.SelectedItem;
-                
-                
+                articulo.Categoria = (Clasificacion)cboCategorias.SelectedItem;
+                articulo.Marca = (Clasificacion)cboMarca.SelectedItem;
+         
 
                 if(articulo.Id == 0)
                 {
@@ -137,6 +133,11 @@ namespace TPWinForm_Sanchez_Flores
 
         }
 
+
+        /// <summary>
+        /// devuelve True si los valores ingresados son incorrectos
+        /// </summary>
+        /// <returns></returns>
         private bool validarIngresos()
         {
             bool error = false;
@@ -175,8 +176,6 @@ namespace TPWinForm_Sanchez_Flores
                 error = true;
                 mensaje += ", Url(max 1000)";
             }
-
-
             if (error)
             {
                 MessageBox.Show(mensaje);

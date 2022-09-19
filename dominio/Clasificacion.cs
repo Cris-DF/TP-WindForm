@@ -21,7 +21,7 @@ namespace dominio
             }
             else
             {
-                return "Falta información";
+                return "Sin descripcion";
             }
         }
     }

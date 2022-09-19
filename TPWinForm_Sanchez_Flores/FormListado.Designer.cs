@@ -82,7 +82,7 @@ namespace TPWinForm_Sanchez_Flores
             this.btnEditar.Location = new System.Drawing.Point(436, 383);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(150, 23);
-            this.btnEditar.TabIndex = 1;
+            this.btnEditar.TabIndex = 5;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -93,7 +93,7 @@ namespace TPWinForm_Sanchez_Flores
             this.btnNuevo.Location = new System.Drawing.Point(436, 456);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(150, 23);
-            this.btnNuevo.TabIndex = 2;
+            this.btnNuevo.TabIndex = 7;
             this.btnNuevo.Text = "Nuevo Articulo";
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
@@ -105,7 +105,7 @@ namespace TPWinForm_Sanchez_Flores
             this.lblId.Location = new System.Drawing.Point(430, 355);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(19, 13);
-            this.lblId.TabIndex = 3;
+            this.lblId.TabIndex = 16;
             this.lblId.Text = "Id:";
             // 
             // txtId
@@ -118,7 +118,7 @@ namespace TPWinForm_Sanchez_Flores
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(128, 13);
-            this.txtId.TabIndex = 4;
+            this.txtId.TabIndex = 10;
             // 
             // txtDescripcion
             // 
@@ -132,7 +132,7 @@ namespace TPWinForm_Sanchez_Flores
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.ReadOnly = true;
             this.txtDescripcion.Size = new System.Drawing.Size(150, 39);
-            this.txtDescripcion.TabIndex = 6;
+            this.txtDescripcion.TabIndex = 8;
             // 
             // lblDescripcion
             // 
@@ -141,7 +141,7 @@ namespace TPWinForm_Sanchez_Flores
             this.lblDescripcion.Location = new System.Drawing.Point(430, 273);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(66, 13);
-            this.lblDescripcion.TabIndex = 5;
+            this.lblDescripcion.TabIndex = 14;
             this.lblDescripcion.Text = "Descripcion:";
             // 
             // pictureArticulo
@@ -174,7 +174,7 @@ namespace TPWinForm_Sanchez_Flores
             this.lblCodigo.Location = new System.Drawing.Point(430, 334);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(43, 13);
-            this.lblCodigo.TabIndex = 8;
+            this.lblCodigo.TabIndex = 15;
             this.lblCodigo.Text = "Codigo:";
             // 
             // btnEliminar
@@ -183,7 +183,7 @@ namespace TPWinForm_Sanchez_Flores
             this.btnEliminar.Location = new System.Drawing.Point(436, 412);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(150, 23);
-            this.btnEliminar.TabIndex = 10;
+            this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -195,7 +195,7 @@ namespace TPWinForm_Sanchez_Flores
             this.cboFiltroCategoria.Location = new System.Drawing.Point(66, 38);
             this.cboFiltroCategoria.Name = "cboFiltroCategoria";
             this.cboFiltroCategoria.Size = new System.Drawing.Size(121, 21);
-            this.cboFiltroCategoria.TabIndex = 12;
+            this.cboFiltroCategoria.TabIndex = 2;
             // 
             // cboFiltroMarca
             // 
@@ -206,7 +206,7 @@ namespace TPWinForm_Sanchez_Flores
             this.cboFiltroMarca.Location = new System.Drawing.Point(239, 38);
             this.cboFiltroMarca.Name = "cboFiltroMarca";
             this.cboFiltroMarca.Size = new System.Drawing.Size(117, 21);
-            this.cboFiltroMarca.TabIndex = 13;
+            this.cboFiltroMarca.TabIndex = 3;
             // 
             // btnFiltrar
             // 
@@ -214,7 +214,7 @@ namespace TPWinForm_Sanchez_Flores
             this.btnFiltrar.Location = new System.Drawing.Point(362, 38);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(59, 23);
-            this.btnFiltrar.TabIndex = 14;
+            this.btnFiltrar.TabIndex = 4;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
@@ -227,7 +227,7 @@ namespace TPWinForm_Sanchez_Flores
             this.lblFiltroMarca.Location = new System.Drawing.Point(193, 41);
             this.lblFiltroMarca.Name = "lblFiltroMarca";
             this.lblFiltroMarca.Size = new System.Drawing.Size(40, 13);
-            this.lblFiltroMarca.TabIndex = 15;
+            this.lblFiltroMarca.TabIndex = 13;
             this.lblFiltroMarca.Text = "Marca:";
             // 
             // lblFiltroCategoria
@@ -236,7 +236,7 @@ namespace TPWinForm_Sanchez_Flores
             this.lblFiltroCategoria.Location = new System.Drawing.Point(9, 41);
             this.lblFiltroCategoria.Name = "lblFiltroCategoria";
             this.lblFiltroCategoria.Size = new System.Drawing.Size(55, 13);
-            this.lblFiltroCategoria.TabIndex = 16;
+            this.lblFiltroCategoria.TabIndex = 12;
             this.lblFiltroCategoria.Text = "Categoria:";
             // 
             // lblBuscar
@@ -245,15 +245,17 @@ namespace TPWinForm_Sanchez_Flores
             this.lblBuscar.Location = new System.Drawing.Point(11, 15);
             this.lblBuscar.Name = "lblBuscar";
             this.lblBuscar.Size = new System.Drawing.Size(53, 13);
-            this.lblBuscar.TabIndex = 19;
+            this.lblBuscar.TabIndex = 11;
             this.lblBuscar.Text = "Buqueda:";
             // 
             // txtBusqueda
             // 
+            this.txtBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBusqueda.Location = new System.Drawing.Point(66, 12);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(290, 20);
-            this.txtBusqueda.TabIndex = 18;
+            this.txtBusqueda.TabIndex = 1;
             this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             // 
             // VentanaListaArticulos
